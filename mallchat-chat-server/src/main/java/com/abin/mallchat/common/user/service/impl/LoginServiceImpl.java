@@ -46,6 +46,10 @@ public class LoginServiceImpl implements LoginService {
         return Objects.equals(token, realToken);//有可能token失效了，需要校验是不是和最新token一致
     }
 
+    /**
+     * 刷新token有效期
+     * @param token
+     */
     @Async
     @Override
     public void renewalTokenIfNecessary(String token) {
@@ -63,6 +67,11 @@ public class LoginServiceImpl implements LoginService {
         }
     }
 
+    /**
+     * 登陆成功，获取token
+     * @param uid
+     * @return
+     */
     @Override
     public String login(Long uid) {
         String key = RedisKey.getKey(RedisKey.USER_TOKEN_STRING, uid);
@@ -76,6 +85,11 @@ public class LoginServiceImpl implements LoginService {
         return token;
     }
 
+    /**
+     * 如果token有效，返回uid
+     * @param token
+     * @return
+     */
     @Override
     public Long getValidUid(String token) {
         boolean verify = verify(token);

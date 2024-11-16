@@ -227,6 +227,11 @@ public class WebSocketServiceImpl implements WebSocketService {
         return Boolean.TRUE;
     }
 
+    /**
+     * 扫码成功等待授权
+     * @param loginCode
+     * @return
+     */
     @Override
     public Boolean scanSuccess(Integer loginCode) {
         Channel channel = WAIT_LOGIN_MAP.getIfPresent(loginCode);

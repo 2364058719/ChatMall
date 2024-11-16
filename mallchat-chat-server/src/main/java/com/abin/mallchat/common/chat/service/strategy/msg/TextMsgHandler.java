@@ -52,7 +52,7 @@ public class TextMsgHandler extends AbstractMsgHandler<TextMsgReq> {
     private static final PrioritizedUrlDiscover URL_TITLE_DISCOVER = new PrioritizedUrlDiscover();
 
     @Override
-    MessageTypeEnum getMsgTypeEnum() {
+    public MessageTypeEnum getMsgTypeEnum() {
         return MessageTypeEnum.TEXT;
     }
 

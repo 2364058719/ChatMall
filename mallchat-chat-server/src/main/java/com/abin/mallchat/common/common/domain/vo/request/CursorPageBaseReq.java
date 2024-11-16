@@ -30,6 +30,7 @@ public class CursorPageBaseReq {
     @ApiModelProperty("游标（初始为null，后续请求附带上次翻页的游标）")
     private String cursor;
 
+    //isSearchCount为false表示不查总数
     public Page plusPage() {
         return new Page(1, this.pageSize, false);
     }

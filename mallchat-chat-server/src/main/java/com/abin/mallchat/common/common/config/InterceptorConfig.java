@@ -8,6 +8,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import javax.annotation.Resource;
+
 /**
  * Description: 配置所有拦截器
  * Author: <a href="https://github.com/zongzibinbin">abin</a>
@@ -16,7 +18,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class InterceptorConfig implements WebMvcConfigurer {
 
-    @Autowired
+    @Resource
     private TokenInterceptor tokenInterceptor;
     @Autowired
     private CollectorInterceptor collectorInterceptor;
